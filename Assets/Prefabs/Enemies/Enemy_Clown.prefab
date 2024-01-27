@@ -18,6 +18,11 @@ PrefabInstance:
       propertyPath: EnemyData.MaxHp
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4190704371665595850, guid: dcdc43aedac95c94498688706c3e3d4a,
+        type: 3}
+      propertyPath: EnemyData.MovementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8549548249309046195, guid: dcdc43aedac95c94498688706c3e3d4a,
         type: 3}
       propertyPath: m_RootOrder
@@ -195,7 +200,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 87929bb5e87b2214588a88ec82ca120f, type: 2}
+      objectReference: {fileID: 22100000, guid: ccf9b3b571745f746aa16ead7dacfb9c,
+        type: 2}
     - target: {fileID: 2146361900069763361, guid: 0b8b9bb575f942546b327265f624927a,
         type: 3}
       propertyPath: m_Name
@@ -565,6 +571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213634057124865487, guid: 0b8b9bb575f942546b327265f624927a,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8242509455875189838, guid: 0b8b9bb575f942546b327265f624927a,
         type: 3}

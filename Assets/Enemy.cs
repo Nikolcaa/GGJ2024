@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
     private Transform graph;
     private SkinnedMeshRenderer meshRenderer;
     private Color cachedMaterialColor;
+    private CharacterController characterController;
 
     [Header("PROPERTIES")]
     public float StartFollowingRadius;
@@ -43,6 +45,7 @@ public class Enemy : MonoBehaviour
         graphChild = transform.GetChild(0).GetChild(0);
         cachedScaleOfGraphChild = graphChild.localScale;
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        characterController = graphChild.GetComponent<CharacterController>();
     }
 
     private void Start()
@@ -75,16 +78,22 @@ public class Enemy : MonoBehaviour
                 t = 0;
                 UpdateHp(Time.deltaTime * regenerationAmount);
             }
-
-            Vector3 newScale;
-            newScale = Vector3.LerpUnclamped(new Vector3(cachedScaleOfGraphChild.x + 0.5f, cachedScaleOfGraphChild.y, cachedScaleOfGraphChild.z + 0.7f), cachedScaleOfGraphChild, (currentHp / EnemyData.MaxHp));                     
-            graphChild.localScale = newScale;
-
-            Color newColor;
-            newColor = Color.Lerp(Color.red, cachedMaterialColor, currentHp / EnemyData.MaxHp);
-            meshRenderer.material.color = newColor;
-
         }
+
+        // Scale with hp
+        Vector3 newScale;
+        newScale = Vector3.LerpUnclamped(new Vector3(cachedScaleOfGraphChild.x + 0.5f, cachedScaleOfGraphChild.y, cachedScaleOfGraphChild.z + 0.7f), cachedScaleOfGraphChild, (currentHp / EnemyData.MaxHp));
+        graphChild.localScale = newScale;
+
+        // Color with hp
+        Color newColor;
+        newColor = Color.Lerp(Color.red, cachedMaterialColor, currentHp / EnemyData.MaxHp);
+        meshRenderer.material.color = newColor;
+
+        // Gravity
+        Vector3 _moveDirection = Vector3.zero;
+        _moveDirection.y -= 5 * Time.deltaTime;
+        characterController.Move(_moveDirection);
     }
 
     private void StartFollowing()
