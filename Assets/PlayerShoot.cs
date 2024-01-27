@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,17 @@ public class PlayerShoot : MonoBehaviour
     public RectTransform crosshair;
     public Transform shootingPoint;
     public LayerMask layerMask;
+    public Transform gun;
+    public Transform gunTargetPosition;
 
     private PlayerMovement playerMovement;
+
+    private Vector3 bakedGunPos;
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        bakedGunPos = gun.localPosition;
     }
 
     private void Start()
@@ -23,6 +29,7 @@ public class PlayerShoot : MonoBehaviour
     }
 
     float t;
+    bool isPressed = false;
     void Update()
     {
         t += Time.deltaTime;
@@ -49,5 +56,22 @@ public class PlayerShoot : MonoBehaviour
                 Destroy(bullet, 2f);
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (!isPressed)
+            {
+                isPressed = true;
+                gun.DOLocalMove(gunTargetPosition.localPosition, 0.5f)
+                    .SetEase(Ease.InOutQuad);
+            }
+            else
+            {
+                isPressed = false;
+                gun.DOLocalMove(bakedGunPos, 0.5f)
+                    .SetEase(Ease.InOutQuad);
+            }
+        }
+
     }
 }
