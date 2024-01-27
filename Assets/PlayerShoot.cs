@@ -36,12 +36,13 @@ public class PlayerShoot : MonoBehaviour
                 Vector3 crosshairPosition = crosshair.position;
 
                 RaycastHit hit;
-                if (Physics.Raycast(Camera.main.transform.position, crosshairPosition - Camera.main.transform.position, out hit, layerMask))
+                if (Physics.Raycast(Camera.main.transform.position, crosshairPosition - Camera.main.transform.position, out hit, 100, layerMask))
                 {
                     crosshairPosition = hit.point;
                 }
 
-                GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
+                GameObject bullet = Instantiate(bulletPrefab, shootingPoint);
+                bullet.transform.SetParent(null);
                 //bullet.transform.LookAt(bulletPosition);
                 bullet.transform.forward = crosshairPosition - bullet.transform.position;
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;

@@ -19,8 +19,24 @@ public class PlayerRotation : MonoBehaviour
         _rotationY = rotation.y;
     }
 
+    bool isResseted = false;
+    public void ResetHeadRot()
+    {
+        if (isResseted)
+            return;
+
+        isResseted = true;
+        target.transform.rotation = Quaternion.identity;
+    }
+
     void Update()
     {
+        if (PlayerMovement.isDead)
+        {
+            ResetHeadRot();
+            return;
+        }
+
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
