@@ -277,7 +277,7 @@ Transform:
   m_Children:
   - {fileID: 5469998312507689198}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5409291918174365832
 CharacterController:
@@ -324,6 +324,7 @@ MonoBehaviour:
   gravity: 20
   directionTransform: {fileID: 7171290340408353737}
   groundCheck: {fileID: 7601815151603417775}
+  playerDead_Objects: {fileID: 0}
 --- !u!114 &1703506802681571189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +359,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 1731691056752181773}
   layerMask:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 577
 --- !u!65 &8913390014898795062
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Clown
       objectReference: {fileID: 0}
+    - target: {fileID: 4190704371665595850, guid: dcdc43aedac95c94498688706c3e3d4a,
+        type: 3}
+      propertyPath: EnemyData.MaxHp
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8549548249309046195, guid: dcdc43aedac95c94498688706c3e3d4a,
         type: 3}
       propertyPath: m_RootOrder
