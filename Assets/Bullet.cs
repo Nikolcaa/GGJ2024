@@ -21,4 +21,9 @@ public class Bullet : MonoBehaviour
             .SetLoops(-1, LoopType.Incremental)
             .SetEase(Ease.Linear);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }

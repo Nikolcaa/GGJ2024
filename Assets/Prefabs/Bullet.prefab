@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 5238715207392440004}
   - component: {fileID: 3705958172902800765}
   - component: {fileID: 6658269059342934331}
+  - component: {fileID: 2643778172568311110}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
@@ -165,7 +166,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6658269059342934331
@@ -182,6 +183,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graph: {fileID: 8309557316761421500}
   sprite: {fileID: 3927635941135057854}
+--- !u!135 &2643778172568311110
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695003111776737524}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.21
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5920596542404354250
 GameObject:
   m_ObjectHideFlags: 0
