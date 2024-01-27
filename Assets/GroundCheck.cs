@@ -8,7 +8,7 @@ public class GroundCheck : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Default"))
         {
             isGrounded = true;
         }
@@ -16,7 +16,7 @@ public class GroundCheck : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Default"))
         {
             isGrounded = false;
         }
