@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour
     public LayerMask layerMask;
     public Transform gun;
     public Transform gunTargetPosition;
+    public ParticleSystem shootingPS;
 
     private PlayerMovement playerMovement;
 
@@ -33,6 +34,15 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         t += Time.deltaTime;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            shootingPS.Play();
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            shootingPS.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
 
         if (Input.GetMouseButton(0))
         {
