@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     private SkinnedMeshRenderer meshRenderer;
     private Color cachedMaterialColor;
     private CharacterController characterController;
+    public GameObject deathPS;
 
     [Header("PROPERTIES")]
     public float StartFollowingRadius;
@@ -119,7 +120,7 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         isDead = true;
-
+        Instantiate(deathPS, graphChild.position + new Vector3(0, 1, 0), Quaternion.identity);
         Destroy(gameObject);
     }
 
