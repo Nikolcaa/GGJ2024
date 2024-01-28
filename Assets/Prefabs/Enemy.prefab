@@ -89,6 +89,7 @@ MonoBehaviour:
     MovementSpeed: 1
   graphChild: {fileID: 0}
   HpSlider: {fileID: 6057091847599622990}
+  deathPS: {fileID: 1277154925287174, guid: 3b517eddec185dd4a830743a742ad00b, type: 3}
   StartFollowingRadius: 5
   playerMask:
     serializedVersion: 2
