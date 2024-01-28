@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         isDead = true;
-        Instantiate(deathPS, graphChild.position + new Vector3(0, 1, 0), Quaternion.identity);
+        Instantiate(deathPS, graphChild.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
