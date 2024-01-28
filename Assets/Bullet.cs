@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Enemy enemy = other.gameObject.GetComponentInParent<Enemy>();
-            enemy.UpdateHp(-Damage);
+            enemy.Damaged(-Damage);
         }
 
         Destroy(gameObject);

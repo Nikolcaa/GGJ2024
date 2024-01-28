@@ -15,6 +15,10 @@ public class PlayerShoot : MonoBehaviour
     public ParticleSystem shootingPS;
 
     private PlayerMovement playerMovement;
+    private AudioSource audioSource;
+
+    [Header("Sounds")]
+    public AudioClip shootingSound;
 
     private Vector3 bakedGunPos;
 
@@ -22,6 +26,7 @@ public class PlayerShoot : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         bakedGunPos = gun.localPosition;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -64,6 +69,7 @@ public class PlayerShoot : MonoBehaviour
                 bullet.transform.forward = crosshairPosition - bullet.transform.position;
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
                 Destroy(bullet, 2f);
+                audioSource.PlayOneShot(shootingSound, 0.3f);
             }
         }
 

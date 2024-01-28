@@ -37,6 +37,12 @@ public class Enemy : MonoBehaviour
     private float currentHp;
 
     private Vector3 cachedScaleOfGraphChild;
+    private AudioSource audioSource;
+
+    [Header("AudioClips")]
+    public AudioClip[] startFollowSounds;
+
+    public AudioClip[] laughSounds;
 
     private void Awake()
     {
@@ -47,6 +53,7 @@ public class Enemy : MonoBehaviour
         cachedScaleOfGraphChild = graphChild.localScale;
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         characterController = graphChild.GetComponent<CharacterController>();
+        audioSource = GetComponentInChildren<AudioSource>();
     }
 
     private void Start()
@@ -66,6 +73,7 @@ public class Enemy : MonoBehaviour
         if (!isFollowing && Physics.OverlapSphere(transform.position, StartFollowingRadius, playerMask, QueryTriggerInteraction.Collide).Count() > 0)
         {
             StartFollowing();
+            PlayRandomStartSound();
         }
         else if (isFollowing)
         {
@@ -103,6 +111,17 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Walk");
     }
 
+    public void Damaged(float Amount)
+    {
+        UpdateHp(Amount);
+        PlayRandomLaughSound();
+
+        if (!isFollowing)
+        {
+            StartFollowing();
+        }
+    }
+
     public void UpdateHp(float Amount)
     {
         currentHp += Amount;
@@ -122,6 +141,42 @@ public class Enemy : MonoBehaviour
         isDead = true;
         Instantiate(deathPS, graphChild.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    int amountCalled = 0;
+    int previousLaughSoundIndex = -1;
+    private void PlayRandomLaughSound()
+    {
+        amountCalled++;
+
+        int current = Random.Range(0, laughSounds.Length);
+        while (current == previousLaughSoundIndex)
+            current = Random.Range(0, laughSounds.Length);
+
+        if (!audioSource.isPlaying || amountCalled >= 5)
+        {
+            amountCalled = 0;
+            audioSource.PlayOneShot(laughSounds[current]);
+            previousLaughSoundIndex = current;
+        }
+
+    }
+
+    int previousStartSoundIndex;
+    private void PlayRandomStartSound()
+    {
+        amountCalled++;
+
+        int current = Random.Range(0, startFollowSounds.Length);
+        while (current == previousStartSoundIndex)
+            current = Random.Range(0, startFollowSounds.Length);
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(startFollowSounds[current]);
+            previousStartSoundIndex = current;
+        }
+
     }
 
     private void OnDrawGizmos()

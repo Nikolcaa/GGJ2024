@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06254744, g: 0.051614862, b: 0.021254474, a: 1}
+  m_IndirectSpecularColor: {r: 0.08561882, g: 0.06384463, b: 0.03412571, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,86 +136,6 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 1796344565}
-    - target: {fileID: 2455291633865644610, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.29803923
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633865644610, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633865644610, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633865644610, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633865672644, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633865672644, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633865672644, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633865672644, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883750870, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883996932, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.378
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883996932, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.27059817
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883996932, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.27059817
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883996932, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6532815
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883996932, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.6532815
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883996932, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455291633883996932, guid: fa1c6d74dff2c694bb99911138825920,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 135
-      objectReference: {fileID: 0}
     - target: {fileID: 4821598309535955559, guid: fa1c6d74dff2c694bb99911138825920,
         type: 3}
       propertyPath: m_Name
@@ -860,6 +780,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2128268530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128268532}
+  - component: {fileID: 2128268531}
+  m_Layer: 0
+  m_Name: 'AudioManager '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2128268531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128268530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba451b636d83b141b3fe6ac1dd5e722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 
+    clip: {fileID: 0}
+    output: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &2128268532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128268530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2535484045430326746
 PrefabInstance:

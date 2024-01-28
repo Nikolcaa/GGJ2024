@@ -5248,6 +5248,7 @@ GameObject:
   - component: {fileID: 1703506802681571189}
   - component: {fileID: 482285834174268208}
   - component: {fileID: 8913390014898795062}
+  - component: {fileID: 7862741591089797103}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5355,6 +5356,7 @@ MonoBehaviour:
   gun: {fileID: 7664724545637021851}
   gunTargetPosition: {fileID: 4449557635012349375}
   shootingPS: {fileID: 2455291633865594290}
+  shootingSound: {fileID: 8300000, guid: 3d7228ba814edbb4dbc0265c0d8bb0de, type: 3}
 --- !u!65 &8913390014898795062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5376,6 +5378,102 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2175279, y: 2.132522, z: 1.2818818}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &7862741591089797103
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821598309535955559}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1.2
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1.9248247
+  MaxDistance: 15.419509
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4838940288266859148
 GameObject:
   m_ObjectHideFlags: 0
@@ -7071,7 +7169,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 983
+    m_Bits: 2007
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -9726,7 +9824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.306
+      value: -0.378
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9734,19 +9832,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.27059817
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.27059817
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.6532815
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.6532815
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9758,19 +9856,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490534, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 19819918, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19847398, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19847398, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19847398, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19847398, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19847398, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19875168, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875168, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.29803923
       objectReference: {fileID: 0}
     - target: {fileID: 19892880, guid: bcd9b34aae40e764a89cacdbc1c3d4e2, type: 3}
       propertyPath: stopAction
