@@ -5270,7 +5270,7 @@ Transform:
   m_Children:
   - {fileID: 5469998312507689198}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5409291918174365832
 CharacterController:
@@ -5318,6 +5318,7 @@ MonoBehaviour:
   directionTransform: {fileID: 7171290340408353737}
   groundCheck: {fileID: 7601815151603417775}
   playerDead_Objects: {fileID: 689267276924739338}
+  deadSceneUi: {fileID: 0}
 --- !u!114 &1703506802681571189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5376,7 +5377,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2175279, y: 2.132522, z: 1.2818818}
+  m_Size: {x: 1.493814, y: 2.132522, z: 1.5632782}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &7862741591089797103
 AudioSource:

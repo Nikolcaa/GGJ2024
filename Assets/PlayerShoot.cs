@@ -38,6 +38,9 @@ public class PlayerShoot : MonoBehaviour
     bool isPressed = false;
     void Update()
     {
+        if (PlayerMovement.isDead)
+            return;
+
         t += Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0))

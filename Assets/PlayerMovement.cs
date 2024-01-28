@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public GroundCheck groundCheck;
     private Transform graph;
     public GameObject playerDead_Objects;
+    public GameObject deadSceneUi;
 
     private Vector3 _moveDirection = Vector3.zero;
     private CharacterController _controller;
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<CharacterController>();
+        PlayerMovement.isDead = false;
     }
 
     void Update()
@@ -91,6 +93,9 @@ public class PlayerMovement : MonoBehaviour
         if (isDead)
             return;
 
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+
         isDead = true;
         _controller.enabled = false;
 
@@ -103,10 +108,10 @@ public class PlayerMovement : MonoBehaviour
         //    .SetEase(Ease.OutBack);
 
         transform.DOJump(transform.position + dir, 1, 1, 2f)
-            .SetEase(Ease.OutBack);
+            .SetEase(Ease.OutQuad);
 
         transform.DORotate(new Vector3(-90, 0, 0), 1.5f)
-            .SetEase(Ease.OutBack);
+            .SetEase(Ease.OutQuad);
 
         enemy.Die();
         playerDead_Objects.SetActive(true);
@@ -119,9 +124,11 @@ public class PlayerMovement : MonoBehaviour
             if (globalVolume.profile.TryGet(out vignette))
             {
                 vignette.color.Override(Color.red);
-                vignette.intensity.Override(0.4f);
+                vignette.intensity.Override(0.45f);
             }
         }
+
+        deadSceneUi.SetActive(true);
 
     }
 
