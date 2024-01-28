@@ -5,11 +5,14 @@ public class Bullet : MonoBehaviour
 {
     public Transform graph;
     public SpriteRenderer sprite;
+    public Collider coll;
+    private Rigidbody rb;
 
     public int Damage;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
 
         graph.transform.DORotate(new Vector3(0, 0, Random.Range(-90f, 90f)), 0.5f, RotateMode.LocalAxisAdd)
             .SetLoops(-1, LoopType.Yoyo)
@@ -27,7 +30,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Enemy enemy = other.gameObject.GetComponentInParent<Enemy>();
             enemy.UpdateHp(-Damage);
