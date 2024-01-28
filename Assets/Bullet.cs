@@ -35,6 +35,10 @@ public class Bullet : MonoBehaviour
             Enemy enemy = other.gameObject.GetComponentInParent<Enemy>();
             enemy.Damaged(-Damage);
         }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Ograda"))
+        {
+            return;
+        }
 
         Destroy(gameObject);
     }
