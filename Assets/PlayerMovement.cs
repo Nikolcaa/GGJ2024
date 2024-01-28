@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
             if (globalVolume.profile.TryGet(out vignette))
             {
                 vignette.color.Override(Color.red);
-                vignette.intensity.Override(0.5f);
+                vignette.intensity.Override(0.4f);
             }
         }
 

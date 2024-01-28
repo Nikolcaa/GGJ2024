@@ -1640,7 +1640,7 @@ Transform:
   m_Children:
   - {fileID: 818279838288760403}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6583634194068538866
 GameObject:
@@ -12243,8 +12243,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Clown
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7292815999701389765, guid: e28a22bbc6a879f46a580621cf6fe36c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
