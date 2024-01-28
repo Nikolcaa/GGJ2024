@@ -14,6 +14,10 @@ public class BgMusic : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnGameLoad()
